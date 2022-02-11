@@ -20,9 +20,15 @@ message CalculatorStreamingResponse {
   int32 x = 1;
 }
 
+message CalculatorAverageResponse {
+  double x = 1;
+}
+
 service CalculatorService {
   // Unary
   rpc Calculate(CalculatorRequest) returns (CalculatorResponse);
 
   rpc CalculatePrimeStreaming(CalculatorStreamingRequest) returns (stream CalculatorStreamingResponse);
+
+  rpc CalculateAverage(stream CalculatorStreamingRequest) returns (CalculatorAverageResponse);
 }

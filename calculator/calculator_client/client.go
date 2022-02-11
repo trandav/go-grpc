@@ -22,7 +22,8 @@ func main() {
 	// fmt.Printf("Created client: %v", c)
 
 	//doUnary(c)
-	doServerStreaming(c)
+	//doServerStreaming(c)
+	doClientStreaming(c)
 }
 
 func doUnary(c calculatorpb.CalculatorServiceClient) {
@@ -40,7 +41,7 @@ func doUnary(c calculatorpb.CalculatorServiceClient) {
 
 func doServerStreaming(c calculatorpb.CalculatorServiceClient) {
 	req := &calculatorpb.CalculatorStreamingRequest{
-		X: 120,
+		X: 1277124,
 	}
 	resStream, err := c.CalculatePrimeStreaming(context.Background(), req)
 	if err != nil {
@@ -58,4 +59,37 @@ func doServerStreaming(c calculatorpb.CalculatorServiceClient) {
 
 		log.Printf("Prime number %v", msg.X)
 	}
+}
+
+func doClientStreaming(c calculatorpb.CalculatorServiceClient) {
+	requests := []*calculatorpb.CalculatorStreamingRequest{
+		&calculatorpb.CalculatorStreamingRequest{
+			X: int32(1),
+		},
+		&calculatorpb.CalculatorStreamingRequest{
+			X: int32(2),
+		},
+		&calculatorpb.CalculatorStreamingRequest{
+			X: int32(3),
+		},
+		&calculatorpb.CalculatorStreamingRequest{
+			X: int32(4),
+		},
+	}
+
+	stream, err := c.CalculateAverage(context.Background())
+	if err != nil {
+		log.Fatalf("Error streaming data: %v", err)
+	}
+
+	for _, req := range requests {
+		fmt.Printf("Sending req: %v\n", req)
+		stream.Send(req)
+	}
+
+	resp, err := stream.CloseAndRecv()
+	if err != nil {
+		log.Fatalf("Uh oh, spaghetti-o: %v", err)
+	}
+	fmt.Printf("Average is: %v\n", resp)
 }

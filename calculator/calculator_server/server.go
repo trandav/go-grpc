@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"go-grpc/calculator/calculatorpb"
 	"google.golang.org/grpc"
+	"io"
 	"log"
 	"net"
 )
@@ -36,6 +37,26 @@ func (*server) CalculatePrimeStreaming(r *calculatorpb.CalculatorStreamingReques
 		}
 	}
 	return nil
+}
+
+func (*server) CalculateAverage(stream calculatorpb.CalculatorService_CalculateAverageServer) error {
+	fmt.Println("Getting a streaming client request.")
+	sum := 0
+	count := 0
+	for {
+		x, err := stream.Recv()
+		if err == io.EOF {
+			average := float64(sum) / float64(count)
+			return stream.SendAndClose(&calculatorpb.CalculatorAverageResponse{
+				X: average,
+			})
+		}
+		if err != nil {
+			log.Fatalf("Error with receiving client data: %v", err)
+		}
+		sum += int(x.GetX())
+		count++
+	}
 }
 
 func main() {
