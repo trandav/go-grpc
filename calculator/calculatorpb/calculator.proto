@@ -31,4 +31,6 @@ service CalculatorService {
   rpc CalculatePrimeStreaming(CalculatorStreamingRequest) returns (stream CalculatorStreamingResponse);
 
   rpc CalculateAverage(stream CalculatorStreamingRequest) returns (CalculatorAverageResponse);
+
+  rpc CalculateStreamingMax(stream CalculatorStreamingRequest) returns (stream CalculatorStreamingResponse);
 }

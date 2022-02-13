@@ -287,7 +287,7 @@ var file_calculator_calculatorpb_calculator_proto_rawDesc = []byte{
 	0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x01, 0x78, 0x22, 0x29, 0x0a, 0x19, 0x43, 0x61, 0x6c, 0x63,
 	0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x41, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0c, 0x0a, 0x01, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x01,
-	0x52, 0x01, 0x78, 0x32, 0xb2, 0x02, 0x0a, 0x11, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74,
+	0x52, 0x01, 0x78, 0x32, 0xa0, 0x03, 0x0a, 0x11, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74,
 	0x6f, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x4a, 0x0a, 0x09, 0x43, 0x61, 0x6c,
 	0x63, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x1d, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61,
 	0x74, 0x6f, 0x72, 0x2e, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x52, 0x65,
@@ -306,9 +306,16 @@ var file_calculator_calculatorpb_calculator_proto_rawDesc = []byte{
 	0x74, 0x72, 0x65, 0x61, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x25, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x43, 0x61, 0x6c,
 	0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x41, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x28, 0x01, 0x42, 0x1b, 0x5a, 0x19, 0x2e, 0x2f, 0x63, 0x61,
-	0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2f, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61,
-	0x74, 0x6f, 0x72, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x28, 0x01, 0x12, 0x6c, 0x0a, 0x15, 0x43, 0x61, 0x6c, 0x63,
+	0x75, 0x6c, 0x61, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x69, 0x6e, 0x67, 0x4d, 0x61,
+	0x78, 0x12, 0x26, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x43,
+	0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x69,
+	0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x63, 0x61, 0x6c, 0x63,
+	0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x43, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f,
+	0x72, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x28, 0x01, 0x30, 0x01, 0x42, 0x1b, 0x5a, 0x19, 0x2e, 0x2f, 0x63, 0x61, 0x6c, 0x63,
+	0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2f, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f,
+	0x72, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -335,11 +342,13 @@ var file_calculator_calculatorpb_calculator_proto_depIdxs = []int32{
 	0, // 0: calculator.CalculatorService.Calculate:input_type -> calculator.CalculatorRequest
 	2, // 1: calculator.CalculatorService.CalculatePrimeStreaming:input_type -> calculator.CalculatorStreamingRequest
 	2, // 2: calculator.CalculatorService.CalculateAverage:input_type -> calculator.CalculatorStreamingRequest
-	1, // 3: calculator.CalculatorService.Calculate:output_type -> calculator.CalculatorResponse
-	3, // 4: calculator.CalculatorService.CalculatePrimeStreaming:output_type -> calculator.CalculatorStreamingResponse
-	4, // 5: calculator.CalculatorService.CalculateAverage:output_type -> calculator.CalculatorAverageResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	2, // 3: calculator.CalculatorService.CalculateStreamingMax:input_type -> calculator.CalculatorStreamingRequest
+	1, // 4: calculator.CalculatorService.Calculate:output_type -> calculator.CalculatorResponse
+	3, // 5: calculator.CalculatorService.CalculatePrimeStreaming:output_type -> calculator.CalculatorStreamingResponse
+	4, // 6: calculator.CalculatorService.CalculateAverage:output_type -> calculator.CalculatorAverageResponse
+	3, // 7: calculator.CalculatorService.CalculateStreamingMax:output_type -> calculator.CalculatorStreamingResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -448,6 +457,7 @@ type CalculatorServiceClient interface {
 	Calculate(ctx context.Context, in *CalculatorRequest, opts ...grpc.CallOption) (*CalculatorResponse, error)
 	CalculatePrimeStreaming(ctx context.Context, in *CalculatorStreamingRequest, opts ...grpc.CallOption) (CalculatorService_CalculatePrimeStreamingClient, error)
 	CalculateAverage(ctx context.Context, opts ...grpc.CallOption) (CalculatorService_CalculateAverageClient, error)
+	CalculateStreamingMax(ctx context.Context, opts ...grpc.CallOption) (CalculatorService_CalculateStreamingMaxClient, error)
 }
 
 type calculatorServiceClient struct {
@@ -533,12 +543,44 @@ func (x *calculatorServiceCalculateAverageClient) CloseAndRecv() (*CalculatorAve
 	return m, nil
 }
 
+func (c *calculatorServiceClient) CalculateStreamingMax(ctx context.Context, opts ...grpc.CallOption) (CalculatorService_CalculateStreamingMaxClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_CalculatorService_serviceDesc.Streams[2], "/calculator.CalculatorService/CalculateStreamingMax", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &calculatorServiceCalculateStreamingMaxClient{stream}
+	return x, nil
+}
+
+type CalculatorService_CalculateStreamingMaxClient interface {
+	Send(*CalculatorStreamingRequest) error
+	Recv() (*CalculatorStreamingResponse, error)
+	grpc.ClientStream
+}
+
+type calculatorServiceCalculateStreamingMaxClient struct {
+	grpc.ClientStream
+}
+
+func (x *calculatorServiceCalculateStreamingMaxClient) Send(m *CalculatorStreamingRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *calculatorServiceCalculateStreamingMaxClient) Recv() (*CalculatorStreamingResponse, error) {
+	m := new(CalculatorStreamingResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // CalculatorServiceServer is the server API for CalculatorService service.
 type CalculatorServiceServer interface {
 	// Unary
 	Calculate(context.Context, *CalculatorRequest) (*CalculatorResponse, error)
 	CalculatePrimeStreaming(*CalculatorStreamingRequest, CalculatorService_CalculatePrimeStreamingServer) error
 	CalculateAverage(CalculatorService_CalculateAverageServer) error
+	CalculateStreamingMax(CalculatorService_CalculateStreamingMaxServer) error
 }
 
 // UnimplementedCalculatorServiceServer can be embedded to have forward compatible implementations.
@@ -553,6 +595,9 @@ func (*UnimplementedCalculatorServiceServer) CalculatePrimeStreaming(*Calculator
 }
 func (*UnimplementedCalculatorServiceServer) CalculateAverage(CalculatorService_CalculateAverageServer) error {
 	return status.Errorf(codes.Unimplemented, "method CalculateAverage not implemented")
+}
+func (*UnimplementedCalculatorServiceServer) CalculateStreamingMax(CalculatorService_CalculateStreamingMaxServer) error {
+	return status.Errorf(codes.Unimplemented, "method CalculateStreamingMax not implemented")
 }
 
 func RegisterCalculatorServiceServer(s *grpc.Server, srv CalculatorServiceServer) {
@@ -624,6 +669,32 @@ func (x *calculatorServiceCalculateAverageServer) Recv() (*CalculatorStreamingRe
 	return m, nil
 }
 
+func _CalculatorService_CalculateStreamingMax_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(CalculatorServiceServer).CalculateStreamingMax(&calculatorServiceCalculateStreamingMaxServer{stream})
+}
+
+type CalculatorService_CalculateStreamingMaxServer interface {
+	Send(*CalculatorStreamingResponse) error
+	Recv() (*CalculatorStreamingRequest, error)
+	grpc.ServerStream
+}
+
+type calculatorServiceCalculateStreamingMaxServer struct {
+	grpc.ServerStream
+}
+
+func (x *calculatorServiceCalculateStreamingMaxServer) Send(m *CalculatorStreamingResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *calculatorServiceCalculateStreamingMaxServer) Recv() (*CalculatorStreamingRequest, error) {
+	m := new(CalculatorStreamingRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _CalculatorService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "calculator.CalculatorService",
 	HandlerType: (*CalculatorServiceServer)(nil),
@@ -642,6 +713,12 @@ var _CalculatorService_serviceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "CalculateAverage",
 			Handler:       _CalculatorService_CalculateAverage_Handler,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "CalculateStreamingMax",
+			Handler:       _CalculatorService_CalculateStreamingMax_Handler,
+			ServerStreams: true,
 			ClientStreams: true,
 		},
 	},

@@ -7,6 +7,7 @@ import (
 	"google.golang.org/grpc"
 	"io"
 	"log"
+	"time"
 )
 
 func main() {
@@ -23,7 +24,8 @@ func main() {
 
 	//doUnary(c)
 	//doServerStreaming(c)
-	doClientStreaming(c)
+	//doClientStreaming(c)
+	doBiDiStreaming(c)
 }
 
 func doUnary(c calculatorpb.CalculatorServiceClient) {
@@ -92,4 +94,44 @@ func doClientStreaming(c calculatorpb.CalculatorServiceClient) {
 		log.Fatalf("Uh oh, spaghetti-o: %v", err)
 	}
 	fmt.Printf("Average is: %v\n", resp)
+}
+
+func doBiDiStreaming(c calculatorpb.CalculatorServiceClient) {
+	fmt.Println("Starting to do BiDi streaming")
+	stream, err := c.CalculateStreamingMax(context.Background())
+	if err != nil {
+		log.Fatalf("Error starting to stream to server: %v", err)
+	}
+
+	waitc := make(chan struct{})
+	requests := []int32{1, 5, 3, 6, 2, 20}
+
+	go func() {
+		for _, i := range requests {
+			req := &calculatorpb.CalculatorStreamingRequest{
+				X: i,
+			}
+			fmt.Println("Sending value of %v", req.GetX())
+			stream.Send(req)
+			time.Sleep(time.Second)
+		}
+		stream.CloseSend()
+	}()
+
+	go func() {
+		for {
+			res, err := stream.Recv()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				log.Fatalf("Closing connection due to %v", err)
+				break
+			}
+			fmt.Println("New max of %v\n", res.GetX())
+		}
+		close(waitc)
+	}()
+
+	<-waitc
 }

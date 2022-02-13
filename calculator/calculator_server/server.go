@@ -59,6 +59,26 @@ func (*server) CalculateAverage(stream calculatorpb.CalculatorService_CalculateA
 	}
 }
 
+func (*server) CalculateStreamingMax(stream calculatorpb.CalculatorService_CalculateStreamingMaxServer) error {
+	fmt.Println("Getting a BiDi client request")
+	max := int32(0)
+	for {
+		msg, err := stream.Recv()
+		if err == io.EOF {
+			return nil
+		}
+		if err != nil {
+			log.Fatalf("Error receiving BiDi data from client: %v", err)
+		}
+		if msg.GetX() > max {
+			max = msg.GetX()
+			stream.Send(&calculatorpb.CalculatorStreamingResponse{
+				X: max,
+			})
+		}
+	}
+}
+
 func main() {
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
