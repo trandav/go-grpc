@@ -24,6 +24,14 @@ message CalculatorAverageResponse {
   double x = 1;
 }
 
+message SquareRootRequest {
+  int32 number = 1;
+}
+
+message SquareRootResponse {
+  double number_root = 1;
+}
+
 service CalculatorService {
   // Unary
   rpc Calculate(CalculatorRequest) returns (CalculatorResponse);
@@ -33,4 +41,9 @@ service CalculatorService {
   rpc CalculateAverage(stream CalculatorStreamingRequest) returns (CalculatorAverageResponse);
 
   rpc CalculateStreamingMax(stream CalculatorStreamingRequest) returns (stream CalculatorStreamingResponse);
+
+  // error handling
+  // this RPC will throw an exception if the sent number is negative
+  // The error being sent is of type INVALID_ARGUMENT
+  rpc SquareRoot(SquareRootRequest) returns (SquareRootResponse);
 }
